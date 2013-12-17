@@ -84,6 +84,7 @@ class ProcessManager(object):
         self.returncode = None
 
         self._terminating = False
+        signal.signal(signal.SIGTERM, self.terminate)
 
     def add_process(self, name, cmd, quiet=False):
         """
