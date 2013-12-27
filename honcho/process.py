@@ -37,6 +37,7 @@ class Process(subprocess.Popen):
             'stdout': subprocess.PIPE,
             'stderr': subprocess.STDOUT,
             'shell': True,
+            'preexec_fn': os.setsid,
             'bufsize': 1,
             'close_fds': not ON_WINDOWS
         }
